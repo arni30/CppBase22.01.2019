@@ -7,8 +7,7 @@ SOURCES += \
         main.cpp \
     level1.cpp \
     level2.cpp \
-    level3.cpp \
-    level4.cpp
+    level3.cpp
 
 HEADERS += \
     dungeoncrawlheader.h

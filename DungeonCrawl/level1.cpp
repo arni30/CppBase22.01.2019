@@ -22,38 +22,38 @@ static char field='.';
 static char tree='T';
 static char exit='X';
 static char scope='*';
-static std::vector<std::vector<char> > map/*(ROW,std::vector<char>(COL))*/;
+static char map[ROW][COL]{
+     {scope,scope,scope,scope,scope,scope,scope,scope,scope,scope,scope,scope},
+     {scope,field,tree,field,field,field,field,field,field,tree,field,scope},
+     {scope,field,tree,field,tree,tree,tree,field,field,field,field,scope},
+     {scope,field,tree,field,field,field,field,field,field,field,field,scope},
+     {scope,field,tree,field,tree,field,tree,field,tree,tree,field,scope},
+     {scope,field,field,field,tree,field,field,field,field,tree,field,scope},
+     {scope,field,tree,field,field,field,tree,field,tree,tree,field,scope},
+     {scope,field,field,field,tree,tree,field,field,tree,tree,exit,scope},
+     {scope,scope,scope,scope,scope,scope,scope,scope,scope,scope,scope,scope}
+};
 void showMap()
 {
+    std::cout.clear();
 
-
-
-
-
-
-
-    for(size_t i{0}; i<map.size(); ++i)
+    for (int i=0;i<ROW;i++)
     {
-
-        for(size_t j{0}; j<map.size(); ++j)
+        for (int j=0;j<COL;j++)
         {
-
             if (player.x==i && player.y==j)
-            {
+              {
                 std::cout<<player.symbol<<" ";
-            }
+              }
             else
             {
-
-                map.push_back({field,field,field,field,field,field,field,field,field,field,field,field});
-                std::cout<<map[i][j]<<' ';
+               std::cout<<map[i][j]<<' ';
             }
 
         }
         std::cout<<std::endl;
     }
 }
-
 
 void movePlayer()
 {
