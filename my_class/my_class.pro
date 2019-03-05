@@ -4,8 +4,4 @@ CONFIG -= app_bundle
 CONFIG -= qt
 
 SOURCES += \
-        main.cpp \
-    palindromfoo.cpp
-
-HEADERS += \
-    palindromheader.h
+        main.cpp
